@@ -1,6 +1,6 @@
 {
   "name": "yarn-easy-patch",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A simpler alternative to the cumbersome yarn patch workflow - automatically creates patches from your node_modules changes",
   "bin": "./bin/cli.js",
   "type": "module",
@@ -25,6 +25,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bergarces/yarn-easy-patch"
+    "url": "git+https://github.com/bergarces/yarn-easy-patch.git"
+  },
+  "homepage": "https://github.com/bergarces/yarn-easy-patch#readme",
+  "bugs": {
+    "url": "https://github.com/bergarces/yarn-easy-patch/issues"
   }
 }

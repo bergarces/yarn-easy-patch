@@ -81,9 +81,20 @@ function stripVersion(packageName) {
 }
 
 // Main execution
-const packageName = process.argv[2];
+const args = process.argv.slice(2);
+const packageName = args.find((arg) => !arg.startsWith("-"));
 
-if (!packageName) {
+// Handle --version flag
+if (args.includes("--version") || args.includes("-v")) {
+  const { createRequire } = await import("module");
+  const require = createRequire(import.meta.url);
+  const pkg = require("../package.json", { with: { type: "json" } });
+  console.log(pkg.version);
+  process.exit(0);
+}
+
+// Handle --help flag or no arguments
+if (!packageName || args.includes("--help") || args.includes("-h")) {
   console.log(`
 Usage: yarn-easy-patch <package-name>
 
@@ -92,8 +103,13 @@ This script automates creating Yarn patches by:
   2. Copying your modified files from node_modules to the temp folder
   3. Running 'yarn patch-commit' to create the patch
 
-Example:
+Options:
+  -h, --help     Show this help message
+  -v, --version  Show version number
+
+Examples:
   yarn dlx yarn-easy-patch react-native
+  yarn dlx yarn-easy-patch @babel/core
 
   # Or if installed globally:
   yarn-easy-patch react-native
@@ -153,7 +169,7 @@ console.log(`   Target: ${tempFolder}`);
 // Step 3: Copy the modified files from node_modules to the temp folder
 // Exclude nested node_modules to avoid copying other packages' files
 await runCommand("rsync", [
-  "-av",
+  "-a",
   "--delete",
   "--exclude",
   "node_modules",
