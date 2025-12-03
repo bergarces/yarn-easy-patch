@@ -4,7 +4,7 @@ A simpler alternative to the cumbersome `yarn patch` workflow.
 
 ## The Problem
 
-The standard Yarn patch workflow is tedious:
+The standard Yarn patch workflow is an unusable aberration:
 1. Run `yarn patch <package>` to get a temp folder
 2. Manually edit files in that temp folder
 3. Run `yarn patch-commit` to create the patch
