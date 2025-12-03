@@ -1,6 +1,6 @@
 {
   "name": "yarn-easy-patch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simpler alternative to the cumbersome yarn patch workflow - automatically creates patches from your node_modules changes",
   "bin": "./bin/cli.js",
   "type": "module",
