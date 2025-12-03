@@ -15,7 +15,7 @@
     "dependencies",
     "cli"
   ],
-  "author": "",
+  "author": "Bernardo Garces Chapero",
   "license": "MIT",
   "engines": {
     "node": ">=16.0.0"
@@ -25,6 +25,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/bergarces/yarn-easy-patch"
   }
 }
