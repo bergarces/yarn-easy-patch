@@ -1,0 +1,30 @@
+{
+  "name": "yarn-easy-patch",
+  "version": "1.0.0",
+  "description": "A simpler alternative to the cumbersome yarn patch workflow - automatically creates patches from your node_modules changes",
+  "bin": "./bin/cli.js",
+  "type": "module",
+  "scripts": {
+    "test": "node bin/cli.js"
+  },
+  "keywords": [
+    "yarn",
+    "patch",
+    "yarn-patch",
+    "monkeypatch",
+    "dependencies",
+    "cli"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "bin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}
